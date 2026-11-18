@@ -8,261 +8,237 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ayzira.AI | AI Automation Studio</title>
+<meta name="theme-color" content="#070b16">
 
-<meta name="description" content="Ayzira.AI builds intelligent AI automation systems, AI agents and workflows for modern businesses.">
+<title>Ayzira.AI — Premium Digital Identity</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-* {
+:root{--bg:#070b16;--panel:#101c32;--blue:#448cff;--cyan:#60e5f4;--gold:#cbb47e;--white:#f5f7ff;--muted:#9eacc3;--line:rgba(150,190,255,.16)}
 
-  margin: 0;
+*{box-sizing:border-box;margin:0;padding:0}
 
-  padding: 0;
+html{scroll-behavior:smooth;scroll-padding-top:90px}
 
-  box-sizing: border-box;
+body{background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;line-height:1.7;overflow-x:hidden}
+
+a{text-decoration:none;color:inherit}
+
+button,input,textarea{font:inherit}
+
+.container{width:min(1120px,90%);margin:auto}
+
+header{position:fixed;top:0;width:100%;z-index:99;background:rgba(7,11,22,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+
+nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+
+.logo{font:800 23px Manrope;letter-spacing:-1px}
+
+.logo span{color:var(--cyan)}
+
+.links{display:flex;gap:30px;list-style:none}
+
+.links a{font-size:13px;color:#c0cce0;transition:.3s}
+
+.links a:hover{color:var(--cyan)}
+
+.btn{display:inline-flex;justify-content:center;align-items:center;padding:14px 23px;border-radius:6px;background:linear-gradient(110deg,#3985ff,#35c8e7);color:#07111f;font-size:12px;font-weight:800;transition:.3s;border:0;cursor:pointer}
+
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px #3985ff40}
+
+.btn.outline{background:transparent;border:1px solid var(--line);color:white}
+
+.menu{display:none;background:none;color:white;border:1px solid var(--line);border-radius:7px;width:43px;height:43px;font-size:22px}
+
+.hero{min-height:790px;display:grid;place-items:center;text-align:center;padding:140px 0 75px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 48%,#10366a55,transparent 48%)}
+
+.tag{display:inline-block;color:var(--cyan);border:1px solid #60e5f433;background:#60e5f40c;border-radius:40px;padding:8px 16px;font-size:10px;font-weight:700;letter-spacing:2px}
+
+h1{font:800 clamp(43px,7vw,78px)/1.12 Manrope;letter-spacing:-3.5px;margin:27px auto 20px}
+
+.gradient{background:linear-gradient(100deg,#80aaff,#60e5f4);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.hero p{max-width:620px;margin:auto;color:var(--muted);font-size:15px}
+
+.actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:30px}
+
+.orb-area{height:330px;display:grid;place-items:center;position:relative;margin:20px auto 0}
+
+.orb{width:205px;height:205px;border-radius:50%;background:radial-gradient(circle at 32% 25%,#d7fbff,#53c9ff 12%,#1758b8 38%,#071329 75%);box-shadow:inset -25px -25px 45px #000a,0 0 65px #3985ff70,0 0 130px #16b9ef25;animation:float 6s ease-in-out infinite;position:relative}
+
+.orb:before,.orb:after{content:"";position:absolute;inset:-27px;border:1px solid #60e5f455;border-radius:50%;transform:rotateX(70deg) rotate(-25deg)}
+
+.orb:after{inset:-45px;border-color:#448cff44;transform:rotateX(72deg) rotate(30deg)}
+
+@keyframes float{50%{transform:translateY(-15px)}}
+
+.orbit-label{position:absolute;bottom:0;color:#819bbd;font-size:10px;letter-spacing:3px;text-transform:uppercase}
+
+.strip{padding:23px 0;border-block:1px solid var(--line);background:#0b1425;text-align:center;color:#9cb1cf;font-size:10px;letter-spacing:2px;font-weight:700}
+
+.strip span{margin:0 22px;color:var(--cyan)}
+
+section.content{padding:105px 0}
+
+.heading{text-align:center;max-width:700px;margin:0 auto 50px}
+
+.eyebrow{font-size:10px;letter-spacing:3px;color:var(--cyan);font-weight:700;text-transform:uppercase}
+
+h2{font:800 clamp(32px,5vw,51px)/1.2 Manrope;letter-spacing:-2px;margin:15px 0}
+
+.heading p,.muted{color:var(--muted);font-size:14px;line-height:1.9}
+
+.services{background:linear-gradient(180deg,#0b1425,#080e1c);border-block:1px solid var(--line)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+.card{background:linear-gradient(145deg,#15243eaa,#0c172aaa);border:1px solid var(--line);padding:30px;border-radius:12px;transition:.35s;position:relative;overflow:hidden}
+
+.card:hover{transform:translateY(-7px);border-color:#60e5f477;box-shadow:0 18px 40px #0005}
+
+.card-icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:#3985ff20;color:var(--cyan);font-size:23px;margin-bottom:23px}
+
+.card h3{font:700 18px Manrope;margin-bottom:12px}
+
+.card p{color:var(--muted);font-size:13px;line-height:1.9}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+
+.about-copy h2{margin:17px 0}
+
+.visual-panel{min-height:330px;border:1px solid var(--line);border-radius:18px;background:radial-gradient(circle at 50% 45%,#17498a66,transparent 55%),#0d1930;display:grid;place-items:center;position:relative;overflow:hidden;padding:25px}
+
+.dashboard{width:100%;max-width:360px;border:1px solid #80baff33;background:#0a1426e8;border-radius:12px;padding:20px;box-shadow:0 25px 65px #0008;transform:perspective(800px) rotateY(-8deg) rotateX(4deg)}
+
+.dash-top{display:flex;justify-content:space-between;color:#dbe8fa;font-size:11px;border-bottom:1px solid var(--line);padding-bottom:14px}
+
+.dash-row{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid #ffffff0c;font-size:11px;color:#b8c8dd}
+
+.dash-dot{width:7px;height:7px;background:#5be5b0;border-radius:50%;display:inline-block;margin-right:7px}
+
+.dash-bar{height:6px;border-radius:8px;background:#192a45;margin-top:7px;overflow:hidden}
+
+.dash-bar i{display:block;width:78%;height:100%;background:linear-gradient(90deg,#3985ff,#60e5f4)}
+
+.process{background:#0b1425;border-block:1px solid var(--line)}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+
+.step{padding:25px 18px;border-top:1px solid #60e5f466}
+
+.step-number{color:var(--cyan);font:800 13px Manrope;letter-spacing:2px}
+
+.step h3{font:700 17px Manrope;margin:16px 0 10px}
+
+.step p{font-size:12px;color:var(--muted);line-height:1.8}
+
+.contact-panel{max-width:800px;margin:auto;padding:55px 35px;border:1px solid var(--line);border-radius:18px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#2457a333,transparent 60%),#0d172b}
+
+.contact-panel h2{max-width:600px;margin:17px auto}
+
+.contact-panel p{max-width:520px;margin:0 auto 28px;color:var(--muted);font-size:14px}
+
+footer{padding:35px 0;border-top:1px solid var(--line);background:#050914}
+
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+
+footer p,footer a{color:#8293ae;font-size:11px}
+
+.footer-links{display:flex;gap:22px}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:850px){
+
+ .links{gap:17px}
+
+ .nav-contact{display:none}
+
+ .hero{min-height:auto;padding-top:150px}
+
+ .hero-grid,.about-grid{grid-template-columns:1fr}
+
+ .hero-visual{min-height:370px}
+
+ .grid{grid-template-columns:repeat(2,1fr)}
+
+ .steps{grid-template-columns:repeat(2,1fr)}
+
+ .about-grid{gap:35px}
 
 }
 
-html {
+@media(max-width:600px){
 
-  scroll-behavior: smooth;
+ .container{width:calc(100% - 36px)}
 
-}
+ nav{height:68px}
 
-body {
+ .menu{display:block}
 
-  background: #080b14;
+ .links{display:none;position:absolute;top:68px;left:0;right:0;padding:22px;background:#0a1325;border-bottom:1px solid var(--line);flex-direction:column;gap:19px}
 
-  color: #ffffff;
+ .links.open{display:flex}
 
-  font-family: Arial, sans-serif;
+ .links a{font-size:14px}
 
-  line-height: 1.7;
+ .logo{font-size:20px}
 
-}
+ .hero{padding:125px 0 55px}
 
-header {
+ h1{font-size:clamp(42px,11vw,58px);letter-spacing:-2.5px}
 
-  display: flex;
+ .hero p{font-size:14px}
 
-  justify-content: space-between;
+ .orb-area{height:285px}
 
-  align-items: center;
+ .orb{width:170px}
 
-  padding: 24px 8%;
+ .section{padding:78px 0}
 
-  border-bottom: 1px solid #202a40;
+ section.content{padding:78px 0}
 
-}
+ .heading{margin-bottom:35px}
 
-.logo {
+ h2{letter-spacing:-1.3px}
 
-  font-size: 28px;
+ .grid{grid-template-columns:1fr}
 
-  font-weight: bold;
+ .card{padding:25px}
 
-  color: #9baaff;
+ .steps{grid-template-columns:1fr 1fr;gap:12px}
 
-}
+ .step{padding:20px 10px}
 
-nav a {
+ .visual-panel{min-height:290px}
 
-  color: #d5d9e8;
+ .contact-panel{padding:38px 20px}
 
-  text-decoration: none;
+ .footer-inner{justify-content:center;text-align:center}
 
-  margin-left: 25px;
+ .footer-links{justify-content:center;flex-wrap:wrap}
 
-}
+ .strip{line-height:2.7}
 
-nav a:hover {
+ .strip span{margin:0 8px}
 
-  color: #9baaff;
-
-}
-
-.hero {
-
-  text-align: center;
-
-  padding: 125px 20px;
-
-  background: radial-gradient(circle at top, #26376c, #080b14 70%);
+ .nav-btn{display:none}
 
 }
 
-.tag {
+@media(prefers-reduced-motion:reduce){
 
-  color: #a5b4fc;
+ html{scroll-behavior:auto}
 
-  letter-spacing: 3px;
+ *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 
-  font-size: 13px;
-
-}
-
-h1 {
-
-  font-size: clamp(40px, 7vw, 72px);
-
-  line-height: 1.15;
-
-  margin: 25px 0;
-
-}
-
-.hero p {
-
-  max-width: 680px;
-
-  margin: auto;
-
-  color: #c0c8dc;
-
-}
-
-.btn {
-
-  display: inline-block;
-
-  margin-top: 32px;
-
-  padding: 14px 30px;
-
-  background: #7185ff;
-
-  color: white;
-
-  text-decoration: none;
-
-  border-radius: 8px;
-
-  font-weight: bold;
-
-}
-
-.btn:hover {
-
-  background: #5269ed;
-
-}
-
-section {
-
-  padding: 85px 8%;
-
-  text-align: center;
-
-}
-
-section h2 {
-
-  font-size: 35px;
-
-}
-
-.muted {
-
-  color: #aeb8ce;
-
-  margin-top: 12px;
-
-}
-
-.services {
-
-  display: grid;
-
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
-  gap: 24px;
-
-  margin-top: 45px;
-
-}
-
-.service {
-
-  background: #121a2b;
-
-  border: 1px solid #293651;
-
-  padding: 32px;
-
-  border-radius: 15px;
-
-  text-align: left;
-
-  transition: 0.3s;
-
-}
-
-.service:hover {
-
-  transform: translateY(-6px);
-
-  border-color: #7185ff;
-
-}
-
-.service h3 {
-
-  color: #a5b4fc;
-
-  margin-bottom: 14px;
-
-}
-
-.about {
-
-  background: #0d1321;
-
-}
-
-.about p {
-
-  max-width: 750px;
-
-  margin: 18px auto;
-
-}
-
-footer {
-
-  text-align: center;
-
-  padding: 30px;
-
-  border-top: 1px solid #202a40;
-
-  color: #aeb8ce;
-
-}
-
-@media(max-width:600px) {
-
-  header {
-
-    flex-direction: column;
-
-    gap: 15px;
-
-  }
-
-  nav a {
-
-    margin: 0 8px;
-
-    font-size: 14px;
-
-  }
-
-  .hero {
-
-    padding: 85px 20px;
-
-  }
+ .reveal{opacity:1;transform:none}
 
 }
 
@@ -274,121 +250,281 @@ footer {
 
 <header>
 
-  <div class="logo">Ayzira.AI</div>
+ <nav class="container">
 
-  <nav>
+  <a href="#home" class="logo">Ayzira<span>.</span>AI</a>
 
-    <a href="#services">Services</a>
+  <ul class="links" id="links">
 
-    <a href="#about">About</a>
+   <li><a href="#home">Home</a></li>
 
-    <a href="#contact">Contact</a>
+   <li><a href="#services">Services</a></li>
 
-  </nav>
+   <li><a href="#about">About</a></li>
+
+   <li><a href="#process">Our Process</a></li>
+
+   <li><a href="#contact">Contact</a></li>
+
+  </ul>
+
+  <a href="#contact" class="btn nav-contact">Let's Talk ↗</a>
+
+  <button class="menu" id="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+ </nav>
 
 </header>
 
 <main>
 
-<div class="hero">
+<section class="hero" id="home">
 
-  <div class="tag">INTELLIGENCE • AUTOMATION • GROWTH</div>
+ <div class="container">
 
-  <h1>Build Smarter.<br>Grow Faster With AI.</h1>
+  <div class="tag">✦ THE FUTURE OF INTELLIGENT BUSINESS</div>
 
-  <p>
+  <h1>We Build What's <br><span class="gradient">Next.</span></h1>
 
-    We help modern businesses transform their operations
+  <p>Transform the way your business works with intelligent AI automation, smart agents and powerful digital systems designed for the future.</p>
 
-    through intelligent AI automation, smart agents and
+  <div class="actions">
 
-    connected workflows.
+   <a class="btn" href="#contact">Start a Conversation ↗</a>
 
-  </p>
-
-  <a class="btn" href="#contact">Let's Work Together</a>
-
-</div>
-
-<section id="services">
-
-  <h2>Our Services</h2>
-
-  <p class="muted">Intelligent solutions for modern businesses.</p>
-
-  <div class="services">
-
-    <div class="service">
-
-      <h3>AI Automation</h3>
-
-      <p class="muted">
-
-        Automate repetitive business tasks and save valuable time.
-
-      </p>
-
-    </div>
-
-    <div class="service">
-
-      <h3>AI Agents</h3>
-
-      <p class="muted">
-
-        Build intelligent assistants for customer support and operations.
-
-      </p>
-
-    </div>
-
-    <div class="service">
-
-      <h3>Workflow Automation</h3>
-
-      <p class="muted">
-
-        Connect applications and automate processes using n8n.
-
-      </p>
-
-    </div>
+   <a class="btn outline" href="#services">Explore Our Services</a>
 
   </div>
 
-</section>
+  <div class="orb-area">
 
-<section class="about" id="about">
+   <div class="orb"></div>
 
-  <h2>About Ayzira.AI</h2>
+   <div class="orbit-label">Intelligence · Innovation · Impact</div>
 
-  <p class="muted">
+  </div>
 
-    Ayzira.AI is focused on building practical AI-powered
-
-    solutions that help businesses work smarter, improve
-
-    efficiency and simplify everyday operations.
-
-  </p>
+ </div>
 
 </section>
 
-<section id="contact">
+<div class="strip">
 
-  <h2>Let's Build Something Smarter</h2>
+ <span>✦</span> AI AUTOMATION <span>✦</span> INTELLIGENT AGENTS <span>✦</span> SMART SYSTEMS <span>✦</span>
 
-  <p class="muted">
+</div>
 
-    Have an idea or business challenge? Let's talk about it.
+<section class="content services" id="services">
 
-  </p>
+ <div class="container">
 
-  <a class="btn" href="mailto:YOUR_EMAIL@example.com">
+  <div class="heading reveal">
 
-    Contact Us
+   <div class="eyebrow">WHAT WE DO</div>
 
-  </a>
+   <h2>Intelligence that <span class="gradient">moves business forward.</span></h2>
+
+   <p>Thoughtfully designed AI solutions that help businesses work smarter, simplify operations and create better experiences.</p>
+
+  </div>
+
+  <div class="grid">
+
+   <article class="card reveal">
+
+    <div class="card-icon">⌘</div>
+
+    <h3>AI Automation</h3>
+
+    <p>Automate repetitive tasks and connect your everyday business tools through intelligent workflows.</p>
+
+   </article>
+
+   <article class="card reveal">
+
+    <div class="card-icon">◉</div>
+
+    <h3>AI Agents</h3>
+
+    <p>Build intelligent assistants that support customer enquiries, business processes and daily operations.</p>
+
+   </article>
+
+   <article class="card reveal">
+
+    <div class="card-icon">✧</div>
+
+    <h3>Intelligent Business Systems</h3>
+
+    <p>Bring your tools and processes together in smarter digital systems built around your business needs.</p>
+
+   </article>
+
+   <article class="card reveal">
+
+    <div class="card-icon">↗</div>
+
+    <h3>Lead Management</h3>
+
+    <p>Organize incoming leads and design structured follow-up workflows for a better client journey.</p>
+
+   </article>
+
+   <article class="card reveal">
+
+    <div class="card-icon">◇</div>
+
+    <h3>Custom Integrations</h3>
+
+    <p>Connect the platforms your team uses and make your business technology work together.</p>
+
+   </article>
+
+   <article class="card reveal">
+
+    <div class="card-icon">◎</div>
+
+    <h3>AI Strategy</h3>
+
+    <p>Discover practical opportunities to use automation and AI to improve the way your business operates.</p>
+
+   </article>
+
+  </div>
+
+ </div>
+
+</section>
+
+<section class="content" id="about">
+
+ <div class="container about-grid">
+
+  <div class="about-copy reveal">
+
+   <div class="eyebrow">ABOUT AYZIRA.AI</div>
+
+   <h2>Built on vision.<br><span class="gradient">Powered by intelligence.</span></h2>
+
+   <p class="muted">Ayzira.AI is an emerging AI solutions brand focused on making intelligent technology practical for modern businesses.</p>
+
+   <p class="muted" style="margin-top:15px">We believe technology should simplify work, create opportunities and give people more room to focus on what matters.</p>
+
+   <a href="#contact" class="btn" style="margin-top:25px">Let's Build Together ↗</a>
+
+  </div>
+
+  <div class="visual-panel reveal">
+
+   <div class="dashboard">
+
+    <div class="dash-top"><strong>AYZIRA / INTELLIGENCE</strong><span>● LIVE</span></div>
+
+    <div style="padding:23px 0">
+
+     <div style="font-size:10px;color:#8da9ca">SYSTEM OVERVIEW</div>
+
+     <div style="font:700 25px Manrope;margin-top:5px">Smart Operations</div>
+
+     <div class="dash-bar"><i></i></div>
+
+    </div>
+
+    <div class="dash-row"><span>◉ AI Workflow</span><span><i class="dash-dot"></i>Active</span></div>
+
+    <div class="dash-row"><span>◇ Intelligent Agent</span><span><i class="dash-dot"></i>Ready</span></div>
+
+    <div class="dash-row"><span>⌘ Integrations</span><span style="color:#60e5f4">Connected</span></div>
+
+    <div style="padding-top:15px;color:#9aabc4;font-size:10px">DESIGNED FOR WHAT'S NEXT</div>
+
+   </div>
+
+  </div>
+
+ </div>
+
+</section>
+
+<section class="content process" id="process">
+
+ <div class="container">
+
+  <div class="heading reveal">
+
+   <div class="eyebrow">HOW WE WORK</div>
+
+   <h2>From first idea to <span class="gradient">intelligent impact.</span></h2>
+
+   <p>A clear, thoughtful process that turns business challenges into practical AI solutions.</p>
+
+  </div>
+
+  <div class="steps">
+
+   <article class="step reveal">
+
+    <div class="step-number">01 / DISCOVER</div>
+
+    <h3>Understand</h3>
+
+    <p>We learn about your goals, challenges and opportunities.</p>
+
+   </article>
+
+   <article class="step reveal">
+
+    <div class="step-number">02 / DESIGN</div>
+
+    <h3>Plan</h3>
+
+    <p>We map out the right solution around your business needs.</p>
+
+   </article>
+
+   <article class="step reveal">
+
+    <div class="step-number">03 / BUILD</div>
+
+    <h3>Create</h3>
+
+    <p>We develop and connect the intelligent systems.</p>
+
+   </article>
+
+   <article class="step reveal">
+
+    <div class="step-number">04 / REFINE</div>
+
+    <h3>Improve</h3>
+
+    <p>We test, refine and prepare the solution for real use.</p>
+
+   </article>
+
+  </div>
+
+ </div>
+
+</section>
+
+<section class="content" id="contact">
+
+ <div class="container">
+
+  <div class="contact-panel reveal">
+
+   <div class="eyebrow">LET'S CONNECT</div>
+
+   <h2>Ready to build <span class="gradient">what's next?</span></h2>
+
+   <p>Have an idea, a challenge or a business process you'd like to improve? Let's start a conversation.</p>
+
+   <a class="btn" href="mailto:hello@ayzira.ai?subject=Project%20Inquiry%20-%20Ayzira.AI">Discuss Your Project ↗</a>
+
+  </div>
+
+ </div>
 
 </section>
 
@@ -396,9 +532,75 @@ footer {
 
 <footer>
 
-  © 2026 Ayzira.AI. All rights reserved.
+ <div class="container footer-inner">
+
+  <a href="#home" class="logo">Ayzira<span>.</span>AI</a>
+
+  <p>© 2026 Ayzira.AI. Built for what's next.</p>
+
+  <div class="footer-links">
+
+   <a href="#services">Services</a>
+
+   <a href="#about">About</a>
+
+   <a href="#contact">Contact</a>
+
+  </div>
+
+ </div>
 
 </footer>
+
+<script>
+
+const menu = document.getElementById('menu');
+
+const links = document.getElementById('links');
+
+menu.addEventListener('click', () => {
+
+  const open = links.classList.toggle('open');
+
+  menu.setAttribute('aria-expanded', String(open));
+
+  menu.textContent = open ? '×' : '☰';
+
+});
+
+links.querySelectorAll('a').forEach(link => {
+
+  link.addEventListener('click', () => {
+
+    links.classList.remove('open');
+
+    menu.setAttribute('aria-expanded', 'false');
+
+    menu.textContent = '☰';
+
+  });
+
+});
+
+const observer = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      entry.target.classList.add('visible');
+
+      observer.unobserve(entry.target);
+
+    }
+
+  });
+
+}, {threshold: 0.12});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+</script>
 
 </body>
 
